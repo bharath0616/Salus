@@ -2,8 +2,8 @@ import mongoose from 'mongoose';
 
 const userSchema = new mongoose.Schema({
 
-    username:{
-        type:String,
+    Batch_id:{
+        type:Number,
         required:true,
         unique:true,  
     },

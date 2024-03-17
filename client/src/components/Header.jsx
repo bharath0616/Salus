@@ -27,25 +27,22 @@ export default function Header() {
    <div className='flex justify-between items-center max-w-6xl mx-auto p-2.5'>
    <Link to='/'>
     <h1 className='font-bold text-sm sm:text-xl flex flex-wrap cursor-pointer'>
-      <span className='text-blue-400'>Ivy</span>
-      <span className='text-orange-400'>Estate</span>
+      <span className='text-blue-400'>Sal</span>
+      <span className='text-orange-400'>us</span>
     </h1>
     </Link>
-    <form className='bg-white p-2 rounded-lg flex item-center'>
-      <input type="text" placeholder='Search...' className='bg-transparent focus:outline-none w-24 sm:w-64' />
-      
-    </form>
+  
     <ul className='flex gap-4 '>
     <Link to='/'>
        <li className='hidden sm:inline text-gray-700 hover:text-black cursor-pointer'>
          Home
        </li>
     </Link>
-    <Link to='about'>
+   {/*  <Link to='about'>
        <li className='hidden sm:inline text-gray-700 hover:text-black cursor-pointer'>
          About
        </li>
-    </Link>
+    </Link> */}
     <Link to='profile'>
     {currentUser ? (
         <img src={currentUser.avatar} alt='profile' className='rounded-full h-8 w-8 object-cover' />

@@ -66,7 +66,7 @@ export default function SignIn() {
       <form className='flex flex-col gap-5 p-6'>
         
       <div className='flex relative' ><FontAwesomeIcon icon={faEnvelope} className=" text-gray-400 h-6 mt-4 ml-3 absolute " />
-        <input type="email" placeholder='Email' className='border p-4 shadow-md 
+        <input type="email" placeholder='Employee Mail' className='border p-4 shadow-md 
         rounded-lg  focus:bg-gray-200 w-full pl-10' id='email' autoComplete='current username'onChange={handleChange}/>
       </div>
 
@@ -87,7 +87,7 @@ export default function SignIn() {
         
       </form>
       <div className='flex gap-2 mt-6 mb-6 ml-6'> 
-        <p>New to IvyEstate?</p>
+        <p>New to Salus?</p>
         <Link to={"/sign-up"}>
           <span className='text-blue-800'>Sign Up</span>
         </Link>

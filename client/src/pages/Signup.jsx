@@ -35,7 +35,7 @@ export default function SignUp() {
     const passwordRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*.,])[a-zA-Z0-9!@#$%^&*.,]{6,16}$/;
     return passwordRegex.test(password);
   }
-  const sendEmail = () => {
+  /* const sendEmail = () => {
     if (!name || !email || !password) {
       setLoading(false);
       // eslint-disable-next-line no-undef
@@ -66,7 +66,7 @@ export default function SignUp() {
       .catch((error) => {
         alert("Failed to send the message, please try sending again.", error)
       });
-  };
+  }; */
 
   const handleSubmit=async (e)=>{
     e.preventDefault();
@@ -130,7 +130,7 @@ export default function SignUp() {
           <FontAwesomeIcon icon={faUser} className="text-gray-400 h-6 mt-4 ml-3 absolute" />
           <input
            type="text"
-           placeholder='Username' 
+           placeholder='Batch_id' 
           className='border p-4 shadow-md w-full pl-10
           rounded-lg focus:bg-gray-200' 
           id='username' 
@@ -146,7 +146,7 @@ export default function SignUp() {
 
       <div className='flex relative'>
         <FontAwesomeIcon icon={faEnvelope} className="text-gray-400 h-6 mt-4 ml-3 absolute" />
-        <input type="email" placeholder='Email' className='border p-4 shadow-md 
+        <input type="email" placeholder='Employee Mail' className='border p-4 shadow-md 
         rounded-lg  focus:bg-gray-200 w-full pl-10' id='email'
          required value={email}
               onChange={(e) => {
