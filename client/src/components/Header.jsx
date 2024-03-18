@@ -40,7 +40,7 @@ export default function Header() {
 </div>
 
   
-    <ul className='flex gap-6 '>
+    <ul className='flex gap-8 '>
     <Link to='/'>
        <li className='hidden sm:inline text-xl text-gray-400 hover:text-xl hover:text-white cursor-pointer'>
          Home

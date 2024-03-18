@@ -27,7 +27,7 @@ app.listen(3000, () =>{
 
 app.use('/api/user',userRouter);
 app.use('/api/auth',authRouter);
-app.use('/api/listing', listingRouter);
+
 
 app.use(express.static(path.join(__dirname, '/client/dist')));
 
@@ -45,25 +45,5 @@ app.use((err,req,res,next) => {
     });
 });
 
-app.get('/BillingPlan/:salesOrder/:salesOrderItem', async (req, res) => {
-    const username = 'NTPLDEMO';
-    const password = 'Neo@123456';
-    const { salesOrder, salesOrderItem } = req.params;
-  
-    try {
-      const response = await axios.get(
-        `https://s4happ.neovatic.com:8101/sap/opu/odata/sap/API_SALES_ORDER_SRV/A_SalesOrder('${salesOrder}')/to_BillingPlan`,
-        {
-          auth: {
-            username,
-            password,
-          },
-        }
-      );  
-  
-      res.json(response.data);
-    } catch (err) {
-      res.status(500).json({ error: 'Internal Server Error' });
-    }
-  });
+
   
