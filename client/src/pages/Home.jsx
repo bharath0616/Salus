@@ -24,7 +24,7 @@ export default function Home() {
   }, []);
   return (
     <div className="mt-20 mr-4  ml-4 overflow-y-hidden" >
-      <div className="flex gap-28 mt-16 justify-center align-middle overflow-y-hidden" data-aos="fade-right">
+      <div className="flex gap-28 mt-16 justify-center align-middle overflow-hidden" data-aos="fade-right">
         <div className="mt-20 p-20  mr-10 align-middle justify-center">
         <img src={light} className="w-80 h-80  mb-10 ml-0 mr-80 -z-10 absolute  "data-aos="fade-up"></img>
         <h className='w-3/4 text-slate-200 font-poppins font-semibold text-4xl'>
@@ -34,7 +34,7 @@ export default function Home() {
         </h>
         </div>
         
-        <div className="p-16 flex  flex-col relative   overflow-y-hidden">
+        <div className="p-16 flex  flex-col relative   overflow-hidden">
 <div className="flex absolute gap-6 overflow-y-hidden">
         <img src={gol} className="w-7  h-7  mb-10" data-aos="fade-left"></img>
         <img src={gol} className="w-10 h-10 ml-94 mt-60 mb-10" data-aos="fade-left"></img>

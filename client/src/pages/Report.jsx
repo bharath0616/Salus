@@ -1,110 +1,55 @@
-// eslint-disable-next-line no-unused-vars
-import React, { useState, useEffect } from 'react';
-import './main.css'
-import axios from 'axios';
-import 'aos/dist/aos.css'; 
-import AOS from 'aos';
-const Partner = () => {
-  const [salesOrderId, setSalesOrderId] = useState('');
-  const [salesOrderItem, setSalesOrderItem] = useState('');
-  const [data, setData] = useState(null);
-  const [error, setError] = useState(null);
+import React, { useEffect, useState } from 'react';
 
-  const makeApiRequest = async () => {
-    if (!salesOrderId || !salesOrderItem) {
-      setError('Enter both Sales Order ID and Sales Order Item');
-      setData(null);
-      return;
-    }
-    try {
-      const response = await axios.get(`http://localhost:3000/billingPlan/${salesOrderId}/${salesOrderItem}`);
-      setData(response.data);
-      setError(null);
-    } catch (err) {
-      if (err.response && err.response.status === 500) {
-        setError('Entered sales order ID or sales order item doesn\'t exist');
-      } else {
-        setError(err.message || 'An error occurred during the API request');
-      }
-      setData(null);
-    }
-  };
+export default function Report() {
+  const [logs, setLogs] = useState(null); // Initialize to null
 
   useEffect(() => {
-    AOS.init({ duration: 1000, offset: 100 });
-    makeApiRequest();
-  }, [salesOrderId, salesOrderItem]);   
+    fetchLogs();
+    const interval = setInterval(fetchLogs, 5000); // Polling every 5 seconds
+    return () => clearInterval(interval);
+  }, []);
 
-  const handleSalesOrderIdChange = (e) => {
-    setSalesOrderId(e.target.value);
-  };
-
-  const handleSalesOrderItemChange = (e) => {
-    setSalesOrderItem(e.target.value);
-  };
-
-  const formatDate = (dateString) => {
-    if (!dateString) {
-      return 'NULL ';
+  const fetchLogs = async () => {
+    try {
+      const response = await fetch('/api/eventLogs');
+      const data = await response.json();
+      // Check if data is an array before setting logs
+      if (Array.isArray(data)) {
+        setLogs(data);
+      } else {
+        console.error('Data is not an array', data);
+        setLogs([]); // Set to empty array if data is not as expected
+      }
+    } catch (error) {
+      console.error('Failed to fetch logs', error);
+      setLogs([]); // Set to empty array in case of fetch error
     }
-
-    const match = dateString.match(/\d+/);
-
-    if (!match) {
-      return ''; 
-    }
-
-    const timestamp = parseInt(match[0]);
-    const formattedDate = new Date(timestamp).toLocaleDateString();
-    return formattedDate;
-  };
-
-  const renderCell = (value) => {
-    return value !== undefined && value !== null && value !== '' ? value : 'NULL';
   };
 
   return (
-    <div className='head' data-aos='fade-left'>
-      <div className='input'>
-        <label>
-          Enter Sales Order ID:
-          <input type="number" value={salesOrderId} onChange={handleSalesOrderIdChange} min={0}/>
-        </label>
-        <label>
-          Enter Sales Order Item:
-          <input type="number" value={salesOrderItem} onChange={handleSalesOrderItemChange} min={0}/>
-        </label>
-        <button hidden onClick={makeApiRequest}>Fetch Data</button> 
+    <div className='mt-20'>
+      <div className="overflow-x-auto relative shadow-md sm:rounded-lg">
+        <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+          <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+              <th scope="col" className="py-3 px-6">Event ID</th>
+              <th scope="col" className="py-3 px-6">Camera ID</th>
+              <th scope="col" className="py-3 px-6">Timestamp</th>
+              <th scope="col" className="py-3 px-6">Event Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            {logs && logs.map((log) => (
+              <tr key={log.eventId} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                <td className="py-4 px-6">{log.eventId}</td>
+                <td className="py-4 px-6">{log.cameraId}</td>
+                <td className="py-4 px-6">{new Date(log.timestamp).toLocaleString()}</td>
+                <td className="py-4 px-6">{log.eventDetails}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
-      
-      {data && (
-        <div>
-          <table data-aos='fade-left'>
-            <thead>
-              <tr>
-                <th>Billing Plan ID</th>
-                <th>Billing Plan Item</th>
-                {/* Add more columns based on your API response */}
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>{renderCell(data.d.BillingPlanID)}</td>
-                <td>{renderCell(data.d.BillingPlanItem)}</td>
-                {/* Add more cells based on your API response */}
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      )}
-
-      {error && (
-        <div className='error' data-aos="fade-right">
-          <p>{error}</p>
-        </div>
-      )}
     </div>
   );
-};
-
-export default Partner;
+}
