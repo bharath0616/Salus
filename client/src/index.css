@@ -2,7 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-    background-color: rgb(236, 247, 247);
-   
-}
+body, html {
+    background: linear-gradient(to right, #1E1E1E, #2d1637);
+
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+  }
+  /* Custom CSS for glow effect */
+  .glass-ui {
+    background: linear-gradient(to left, #262a3b, #2d1637);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: background 0.5s ease, box-shadow 0.5s ease;
+  }
+  
+  .glass-ui:hover {
+    background: rgba(30, 30, 30, 0.7); /* Darker background on hover */
+  box-shadow: 0 0 15px rgba(142, 68, 173, 0.6), 0 0 20px rgba(142, 68, 173, 0.6), 0 0 25px rgba(142, 68, 173, 0.6); /* Glow effect */
+  }
+  
+  
+  

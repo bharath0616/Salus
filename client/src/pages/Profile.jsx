@@ -144,7 +144,7 @@
     return (
       <div className='p-4 max-w-lg mx-auto'>
         <div>
-          <h1 className='text-3xl font-bold my-8 text-center'>Profile</h1>
+          <h1 className='text-3xl font-bold my-8 text-center text-gray-200'>Profile</h1>
 
           <form onSubmit={handleSubmit} className='flex flex-col gap-4' >
 
@@ -192,12 +192,12 @@
           >
             {loading ? 'Loading...' : 'Update'}
           </button>
-          <Link
+          {/* <Link
             className='bg-green-700 text-white p-3 rounded-lg uppercase text-center hover:opacity-95'
             to={'/create-listing'}
           >
             Add a property
-          </Link>
+          </Link> */}
         </form>
         <div className='flex justify-between mt-5'>
           <span
@@ -216,7 +216,7 @@
           {updateSuccess ? 'User is updated successfully!' : ''}
         </p>
         <button onClick={handleShowListings} className='text-green-700 w-full'>
-          Show properties
+         
         </button>
         <p className='text-red-700 mt-5'>
           {showListingsError ? 'Error showing listings' : ''}
