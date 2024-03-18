@@ -9,6 +9,7 @@ import Header from './components/Header'
 import PrivateRoute from './components/PrivateRoute'
 import Alert from './pages/Alert'
 import Solutions from './pages/Solutions'
+import Report from './pages/Report'
 
 export default function App() { 
   return (
@@ -18,6 +19,7 @@ export default function App() {
       <Route path='/' element={<Home />} />
       <Route path='/alerts' element={<Alert />} />
       <Route path='/solutions' element={<Solutions />} />
+      <Route path='/report' element={<Report/>} />
       <Route path='/sign-in' element={<SignIn />} />
       <Route path='/sign-up' element={<SignUp />} />
     

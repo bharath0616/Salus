@@ -23,6 +23,25 @@ body, html {
     background: rgba(30, 30, 30, 0.7); /* Darker background on hover */
   box-shadow: 0 0 15px rgba(142, 68, 173, 0.6), 0 0 20px rgba(142, 68, 173, 0.6), 0 0 25px rgba(142, 68, 173, 0.6); /* Glow effect */
   }
+  .glass1-ui {
+    background: black;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0.7, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: background 0.5s ease, box-shadow 0.5s ease;
+  }
   
+  .glass1-ui:hover {
+    background: black; /* Darker background on hover */
+  box-shadow: 0 0 15px rgba(142, 68, 173, 0.6), 0 0 20px rgba(142, 68, 173, 0.6), 0 0 25px rgba(142, 68, 173, 0.6); /* Glow effect */
+  }
+
+.dark-glass-effect {
+  background-color: rgba(31, 41, 55, 0.6); /* Dark with transparency */
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
   
   
