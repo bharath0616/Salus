@@ -42,9 +42,15 @@ export default function Header() {
   
     <ul className='flex gap-8 '>
     <Link to='/'>
-       <li className='hidden sm:inline text-xl text-gray-400 hover:text-xl hover:text-white cursor-pointer'>
+    {currentUser ? (
+      <li className='hidden sm:inline text-xl text-gray-400 hover:text-xl hover:text-white cursor-pointer'>
          Home
        </li>
+    ):
+     <li className=' text-gray-100 text-xl hover:text-black cursor-pointer'>
+    
+  </li>
+    }  
     </Link>
    {/*  <Link to='about'>
        <li className='hidden sm:inline text-gray-700 hover:text-black cursor-pointer'>
@@ -52,7 +58,17 @@ export default function Header() {
        </li>
     </Link> */}
  
-   
+    <Link to='solutions'>
+    {currentUser ? (
+      <li className='hidden sm:inline text-xl text-gray-400 hover:text-xl hover:text-white cursor-pointer'>
+         Solutions
+       </li>
+    ):
+     <li className=' text-gray-100 text-xl hover:text-black cursor-pointer'>
+    
+  </li>
+    }  
+    </Link>
 
     <Link to='report'>
     {currentUser ? (
@@ -65,17 +81,7 @@ export default function Header() {
   </li>
     }  
     </Link>
-    <Link to='solutions'>
-    {currentUser ? (
-      <li className='hidden sm:inline text-xl text-gray-400 hover:text-xl hover:text-white cursor-pointer'>
-         Solutions
-       </li>
-    ):
-     <li className=' text-gray-100 text-xl hover:text-black cursor-pointer'>
     
-  </li>
-    }  
-    </Link>
 
     <Link to='alerts'>
     {currentUser ? (

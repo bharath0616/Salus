@@ -1,0 +1,12 @@
+{
+    "events": [
+      { "eventId": 1, "address": "15 Sameh Ezzat Street", "timestamp": "25-03-2024 16:48", "eventDetails": "Fire" },
+      { "eventId": 2, "address": "20 Johnson Avenue", "timestamp": "25-03-2024 16:01", "eventDetails": "Crash" },
+      { "eventId": 3, "address": "35 Elm Street", "timestamp": "25-03-2024 01:48", "eventDetails": "Crash" },
+      { "eventId": 4, "address": "10 Oakwood Drive", "timestamp": "26-04-2024 02:58", "eventDetails": "Fire" },
+      { "eventId": 5, "address": "45 Maple Lane", "timestamp": "23-03-2024 07:18", "eventDetails": "Crash" },
+      { "eventId": 6, "address": "55 Pine Street", "timestamp": "24-03-2024 02:22", "eventDetails": "Fire" },
+      { "eventId": 7, "address": "30 Cherry Avenue", "timestamp": "25-03-2024 06:22", "eventDetails": "Crash" }
+    ]
+  }
+  

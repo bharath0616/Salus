@@ -1,0 +1,6 @@
+[
+    { "id": 1, "message": "A fire accident occured at","address":"15 Sameh Ezzat Street", "timestamp": "2024-03-19T09:30:00Z" },
+    { "id": 2, "message": "Crash detected at","address":"20 Johnson Avenue", "timestamp": "2024-03-18T15:45:00Z" },
+    { "id": 3, "message": "A fire accident occured at","address":"35 Elm Street", "timestamp": "2024-03-17T21:20:00Z" }
+  ]
+  
