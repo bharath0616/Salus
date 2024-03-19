@@ -1,22 +1,21 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-// eslint-disable-next-line no-unused-vars
+/* import { getAnalytics } from "firebase/analytics"; */
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey:import.meta.env.VITE_FIREBASE_API_KEY ,
-  authDomain: "ivyestate-8abf5.firebaseapp.com",
-  projectId: "ivyestate-8abf5",
-  storageBucket: "ivyestate-8abf5.appspot.com",
-  messagingSenderId: "980710052516",
-  appId: "1:980710052516:web:12706da92dbee76e178c31",
-  measurementId: "G-6JLEB3CB14"
+  apiKey: "AIzaSyCPiWCOMbgLEtxKVzx21wKFolRaEY6_VVE",
+  authDomain: "salus-e6ed8.firebaseapp.com",
+  projectId: "salus-e6ed8",
+  storageBucket: "salus-e6ed8.appspot.com",
+  messagingSenderId: "419449168229",
+  appId: "1:419449168229:web:1e5f11eb25b02eb1ac818c",
+  measurementId: "G-7EBBFQ44XD"
 };
 
 // Initialize Firebase
-
-
-export const app=initializeApp(firebaseConfig)
+export const app = initializeApp(firebaseConfig);
+/* const analytics = getAnalytics(app); */

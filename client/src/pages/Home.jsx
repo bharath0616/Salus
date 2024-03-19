@@ -23,7 +23,7 @@ export default function Home() {
     });
   }, []);
   return (
-    <div className="mt-20 mr-4  ml-4 overflow-y-hidden" >
+    <div className="mt-20 mr-4  ml-4 overflow-hidden" >
       <div className="flex gap-28 mt-16 justify-center align-middle overflow-hidden" data-aos="fade-right">
         <div className="mt-20 p-20  mr-10 align-middle justify-center">
         <img src={light} className="w-80 h-80  mb-10 ml-0 mr-80 -z-10 absolute  "data-aos="fade-up"></img>
@@ -35,7 +35,7 @@ export default function Home() {
         </div>
         
         <div className="p-16 flex  flex-col relative   overflow-hidden">
-<div className="flex absolute gap-6 overflow-y-hidden">
+<div className="flex absolute gap-6 overflow-hidden">
         <img src={gol} className="w-7  h-7  mb-10" data-aos="fade-left"></img>
         <img src={gol} className="w-10 h-10 ml-94 mt-60 mb-10" data-aos="fade-left"></img>
         <img src={gol} className="w-8 h-8 ml-80 mt-30 mb-10" data-aos="fade-right"></img>
