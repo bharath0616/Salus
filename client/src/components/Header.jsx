@@ -41,16 +41,22 @@ export default function Header() {
 
   
     <ul className='flex gap-8 '>
+    
     <Link to='/'>
-    {currentUser ? (
+    {!currentUser ? (
       <li className='hidden sm:inline text-xl text-gray-400 hover:text-xl hover:text-white cursor-pointer'>
          Home
        </li>
-    ):
-     <li className=' text-gray-100 text-xl hover:text-black cursor-pointer'>
-    
-  </li>
-    }  
+       ):""};
+    </Link>
+
+    <Link to='sign-in'>
+    {!currentUser ? (
+      <li className='hidden sm:inline text-xl text-gray-400 hover:text-xl hover:text-white cursor-pointer'>
+        Sign In
+      </li>
+    ): ""}
+
     </Link>
    {/*  <Link to='about'>
        <li className='hidden sm:inline text-gray-700 hover:text-black cursor-pointer'>
@@ -64,9 +70,7 @@ export default function Header() {
          Solutions
        </li>
     ):
-     <li className=' text-gray-100 text-xl hover:text-black cursor-pointer'>
-    
-  </li>
+    ""
     }  
     </Link>
 
@@ -75,10 +79,7 @@ export default function Header() {
       <li className='hidden sm:inline text-xl text-gray-400 hover:text-xl hover:text-white cursor-pointer'>
          Report
        </li>
-    ):
-     <li className=' text-gray-100 text-xl hover:text-black cursor-pointer'>
-    
-  </li>
+    ): ""
     }  
     </Link>
     
@@ -88,21 +89,18 @@ export default function Header() {
       <li className='hidden sm:inline text-xl text-gray-400 hover:text-xl hover:text-white cursor-pointer'>
       Alert
        </li>
-    ):
-     <li className=' text-gray-100 text-xl hover:text-black cursor-pointer'>
-    
-  </li>
+    ):""
     }  
     </Link>
+
     <Link to='profile'>
     {currentUser ? (
         <img src={currentUser.avatar} alt='profile' className='rounded-full h-8 w-8 mb-4 object-cover' />
     ):
-     <li className='hidden sm:inline text-lg text-gray-400 hover:text-xl hover:text-white cursor-pointer'>
-    Sign In
-  </li>
+     ""
     }  
     </Link>
+    
     </ul>
     </div>
    </header>
